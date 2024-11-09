@@ -49,7 +49,45 @@ public class Airfield {
 			  System.err.println(e);
 			}
 		 }
-
+	public void listFleet() {
+			for (Jet jet : fleet) {
+				System.out.println(jet);
+			}
+		}
+	
+	public void fly() {
+		for (Jet jet : fleet) {
+			jet.fly();
+		}
+		
+		
+	}
+	
+	public void fastestJet() {
+		Jet fastestJet = fleet.get(0);
+		for (int i = 1; i < fleet.size(); i++) {
+			if (fastestJet.getSpeed() < fleet.get(i).getSpeed()) {
+				fastestJet = fleet.get(i);
+			}
+		}
+		System.out.println(fastestJet);
+	}
+	public void jetWithLongestRange() {
+		Jet j = fleet.get(0);
+		for (int i = 1; i < fleet.size(); i++) {
+			if (j.getRange() < fleet.get(i).getRange()) {
+				j = fleet.get(i);
+			}
+		}
+		System.out.println(j);
+		
+	}
+	public void addJet() {
+		
+	}
+	public void removeJet() {
+		
+	}
 }
 
 

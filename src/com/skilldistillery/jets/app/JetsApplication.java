@@ -42,14 +42,32 @@ public class JetsApplication {
 		
 		switch (choice) {
 		case 1:
-			listFleet();
+			airField.listFleet();
 			break;
 		case 2:
-//			fly();
+			airField.fly();
 			break;
-		case 3:
-			
-			
+//		case 3:
+//			fastestJet();
+//			break;
+//		case 4:
+//			jetWithLongestRange();
+//			break;
+//		case 5:
+//			loadCargo();
+//			break;
+//		case 6:
+//			dogfight();
+//			break;
+//		case 7:
+//			addJet();
+//			break;
+//		case 8:
+//			removeJet();
+//			break;
+//		case 9:
+//			System.out.println("Bye bye");
+//			
 		}
 	}
 		

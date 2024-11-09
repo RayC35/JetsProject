@@ -20,8 +20,7 @@ public abstract class Jet {
 	}
 	
 	public void fly() {
-		//override in each subclass
-		System.out.println(this.model + " flying");
+		System.out.println(this.model + " flying!");
 	}
 	
 	public double getSpeedInMach() {

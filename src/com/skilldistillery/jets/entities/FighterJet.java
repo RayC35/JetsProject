@@ -1,6 +1,6 @@
 package com.skilldistillery.jets.entities;
 
-public class FighterJet extends Jet {
+public class FighterJet extends Jet implements CombatReady {
 
 	public FighterJet() {
 		super();
@@ -11,5 +11,18 @@ public class FighterJet extends Jet {
 		super(model, speed, range, price);
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public void fight() {
+		System.out.println("Pew pew, brrrrrrrrrrr brrrrrrrrrrr");
+		// TODO Auto-generated method stub
+		
+	}
+	
+//	public void fly() { 
+//		double airTime = speed/range;
+//		System.out.println(  + " taking off! I'll be flying for " + airTime + " hours");
+//		
+//	}
 
 }

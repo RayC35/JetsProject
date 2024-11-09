@@ -1,6 +1,6 @@
 package com.skilldistillery.jets.entities;
 
-public class CargoJet extends Jet {
+public class CargoJet extends Jet implements CargoCarrier {
 
 	public CargoJet() {
 		super();
@@ -10,6 +10,11 @@ public class CargoJet extends Jet {
 	public CargoJet(String model, int speed, int range, double price) {
 		super(model, speed, range, price);
 		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void loadCargo() {
+		System.out.println(getModel() + " loading cargo!");
 	}
 
 }
