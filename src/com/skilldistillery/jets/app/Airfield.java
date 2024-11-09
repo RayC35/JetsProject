@@ -82,6 +82,23 @@ public class Airfield {
 		System.out.println(j);
 		
 	}
+	
+	public void loadCargo() {
+		for (Jet jet : fleet) {
+			if (jet instanceof CargoJet) {
+				((CargoJet)jet).loadCargo();
+			}
+		}
+	}
+	
+	public void fight() {
+		for (Jet jet : fleet) {
+			if (jet instanceof FighterJet) {
+				((FighterJet) jet).fight();
+			}
+		}
+	}
+	
 	public void addJet() {
 		
 	}
