@@ -8,22 +8,16 @@ public class JetsApplication {
 	private Airfield airField = new Airfield();
 	private static Scanner kb;
 
-//	No other fields, no list of jets
-	
 	public static void main(String[] args) {
 		kb = new Scanner(System.in);
 		JetsApplication app = new JetsApplication();
 		app.launch();
 
-		
-		
 		kb.close();
-
 		
 	}
 	
 	private void launch() {
-//		Loop: displayUserMenu(), get choice from scanner, and act on choice
 		displayUserMenu();
 	}
 	private void displayUserMenu() {
@@ -60,22 +54,14 @@ public class JetsApplication {
 			airField.fight();
 			break;
 		case 7:
-			System.out.println("What model jet is it?");
-			String model = kb.next();
-			System.out.println("What is the top speed of the jet?");
-			int speed = kb.nextInt();
-			System.out.println("What is the range of the jet?");
-			int range = kb.nextInt();
-			System.out.println("What is the price of the jet?");
-			double price = kb.nextDouble();
-			Jet newJet = new PassengerJet(model, speed. range, price);
+			airField.addJet();
 			break;
-//		case 8:
-//			removeJet();
-//			break;
-//		case 9:
-//			System.out.println("Bye bye");
-//			
+		case 8:
+			airField.removeJet();
+			break;
+		case 9:
+			System.out.println("Bye bye");
+			
 		}
 	}
 		

@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import com.skilldistillery.jets.entities.CargoJet;
 import com.skilldistillery.jets.entities.FighterJet;
@@ -32,6 +33,7 @@ public class Airfield {
 				 int jetSpeed = Integer.parseInt(jetData[2]);
 			     int jetRange = Integer.parseInt(jetData[3]);
 				 double jetPrice = Double.parseDouble(jetData[4]);
+				 
 
 				if (jetType.equals("Cargo")) {
 					fleet.add(new CargoJet(jetModel, jetSpeed, jetRange, jetPrice));
@@ -48,6 +50,9 @@ public class Airfield {
 			catch (IOException e) {
 			  System.err.println(e);
 			}
+		 	catch (ArrayIndexOutOfBoundsException e) {
+		 		System.err.println(e);
+		 	}
 		 }
 	public void listFleet() {
 			for (Jet jet : fleet) {
@@ -101,22 +106,21 @@ public class Airfield {
 	
 	public void addJet() {
 		
+		Scanner kb = new Scanner(System.in);
+		System.out.println("What model jet is it?");
+		String model = kb.next();
+		System.out.println("What is the top speed of the jet?");
+		int speed = kb.nextInt();
+		System.out.println("What is the range of the jet?");
+		int range = kb.nextInt();
+		System.out.println("What is the price of the jet?");
+		double price = kb.nextDouble();
+		Jet newJet = new PassengerJet(model, speed, range, price);
+		fleet.add(newJet);
+		
 	}
 	public void removeJet() {
-		
+		listFleet();
 	}
 }
 
-
-
-
-
-
-
-	//public methods for handling jets
-
-
-//				 Jet j = new Jet(jetType, jetModel, jetSpeed, jetRange, jetPrice);
-//				 fleet.add(j);
-//				 System.out.println(j);
-//				 System.out.println(line);
