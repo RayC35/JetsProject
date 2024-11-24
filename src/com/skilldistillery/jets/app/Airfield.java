@@ -22,11 +22,11 @@ public class Airfield {
 	private void loadJetsFromFile(String fileName) {
 
 		 try {
-			 BufferedReader bufIn = new BufferedReader(new FileReader(fileName));
+			 BufferedReader bufIn = new BufferedReader(new FileReader("jets.txt"));
 			 String line;
 			 while ((line = bufIn.readLine()) != null) {
 				 
-				 String[] jetData = line.split(", ");
+				 String[] jetData = line.split(",");
 				 
 				 String jetType = jetData[0];
 				 String jetModel = jetData[1];
@@ -50,12 +50,21 @@ public class Airfield {
 			catch (IOException e) {
 			  System.err.println(e);
 			}
-		 	catch (ArrayIndexOutOfBoundsException e) {
-		 		System.err.println(e);
-		 	}
+//		 	catch (ArrayIndexOutOfBoundsException e) {
+//		 		System.err.println(e);
+//		 	}
 		 }
 	public void listFleet() {
 			for (Jet jet : fleet) {
+				if (jet instanceof CargoJet) {
+					((CargoJet)jet).toString();
+				}
+				else if (jet instanceof FighterJet) {
+					((FighterJet)jet).toString();
+				}
+				else if (jet instanceof PassengerJet) {
+					((PassengerJet)jet).toString();
+				}
 				System.out.println(jet);
 			}
 		}
@@ -75,7 +84,8 @@ public class Airfield {
 				fastestJet = fleet.get(i);
 			}
 		}
-		System.out.println(fastestJet);
+//		System.out.println(fastestJet);
+		System.out.println("The fastest jet in the fleet is the " + fastestJet.getModel() + " with a max speed of " + fastestJet.getSpeed() + "!");
 	}
 	public void jetWithLongestRange() {
 		Jet j = fleet.get(0);
@@ -85,6 +95,7 @@ public class Airfield {
 			}
 		}
 		System.out.println(j);
+		System.out.println("The jet with the longest range in the fleet is the " + j.getModel() + " with a max range of " + j.getRange() + "!");
 		
 	}
 	
@@ -120,7 +131,24 @@ public class Airfield {
 		
 	}
 	public void removeJet() {
-		listFleet();
+		Scanner kb = new Scanner(System.in);
+		
+		for (int i = 0; i < fleet.size(); i++) {
+			Jet jets = fleet.get(i);
+			System.out.println(i + ":" + jets.getModel());
+		}
+		
+		System.out.println();
+		System.out.println("Which jet would you like to remove? Please enter a number.");
+		int userChoice = kb.nextInt();
+		Jet removedJet = fleet.remove(userChoice);
+		System.out.println("You removed " + removedJet.getModel() + "!" );
+		
+		for (int i = 0; i < fleet.size(); i++) {
+			Jet jets = fleet.get(i);
+			System.out.println(i + ":" + jets.getModel());
+		}
+		
 	}
 }
 

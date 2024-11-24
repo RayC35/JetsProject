@@ -19,6 +19,8 @@ public class JetsApplication {
 	
 	private void launch() {
 		displayUserMenu();
+		userChoice();
+		
 	}
 	private void displayUserMenu() {
 		System.out.println("***********************AIRFIELD**********************");
@@ -30,38 +32,56 @@ public class JetsApplication {
 		System.out.println("*****************************************************");
 	}
 	private void userChoice() {
-		System.out.println("Please enter a number");
-		int choice = kb.nextInt();
+		boolean keepGoing = true;
+		while (keepGoing) {
 		
-		
+			System.out.println("Please enter a number: ");
+			int choice = kb.nextInt();
 		switch (choice) {
 		case 1:
 			airField.listFleet();
+			System.out.println();
+			displayUserMenu();
 			break;
 		case 2:
 			airField.fly();
+			System.out.println();
+			displayUserMenu();
 			break;
 		case 3:
 			airField.fastestJet();
+			System.out.println();
+			displayUserMenu();
 			break;
 		case 4:
 			airField.jetWithLongestRange();
+			System.out.println();
+			displayUserMenu();
 			break;
 		case 5:
 			airField.loadCargo();
+			System.out.println();
+			displayUserMenu();
 			break;
 		case 6:
 			airField.fight();
+			System.out.println();
+			displayUserMenu();
 			break;
 		case 7:
 			airField.addJet();
+			System.out.println();
+			displayUserMenu();
 			break;
 		case 8:
 			airField.removeJet();
+			System.out.println();
+			displayUserMenu();
 			break;
 		case 9:
 			System.out.println("Bye bye");
-			
+			keepGoing = false;
+			}
 		}
 	}
 		

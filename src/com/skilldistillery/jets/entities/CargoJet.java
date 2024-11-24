@@ -15,4 +15,10 @@ public class CargoJet extends Jet implements CargoCarrier {
 		System.out.println(getModel() + " loading cargo!");
 	}
 
+	@Override
+	public String toString() {
+		return "CargoJet [toString()=" + super.toString() + "]";
+	}
+
+	
 }

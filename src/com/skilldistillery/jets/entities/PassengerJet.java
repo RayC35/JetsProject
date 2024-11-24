@@ -10,4 +10,10 @@ public class PassengerJet extends Jet {
 		super(model, speed, range, price);
 	}
 
+	@Override
+	public String toString() {
+		return "PassengerJet [toString()=" + super.toString() + "]";
+	}
+
+	
 }

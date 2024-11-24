@@ -15,5 +15,12 @@ public class FighterJet extends Jet implements CombatReady {
 		System.out.println("Pew pew, brrrrrrrrrrr brrrrrrrrrrr");
 		
 	}
+
+	@Override
+	public String toString() {
+		return "FighterJet [toString()=" + super.toString() + "]";
+	}
+
+	
 	
 }

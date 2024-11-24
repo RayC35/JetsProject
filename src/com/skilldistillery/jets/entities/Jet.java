@@ -21,7 +21,7 @@ public abstract class Jet {
 	
 	public void fly() {
 		double airTime = range/speed;
-		System.out.println(this.model + " is flying! Can fly for " + airTime + " hours");
+		System.out.println(this.model + " is flying! Can fly for " + airTime + " hours on a full tank!");
 	}
 	
 	public double getSpeedInMach() {
