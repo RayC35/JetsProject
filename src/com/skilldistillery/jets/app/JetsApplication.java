@@ -69,7 +69,7 @@ public class JetsApplication {
 			displayUserMenu();
 			break;
 		case 7:
-			airField.addJet();
+			airField.addPassengerJet();
 			System.out.println();
 			displayUserMenu();
 			break;

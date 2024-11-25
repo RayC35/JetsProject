@@ -84,7 +84,6 @@ public class Airfield {
 				fastestJet = fleet.get(i);
 			}
 		}
-//		System.out.println(fastestJet);
 		System.out.println("The fastest jet in the fleet is the " + fastestJet.getModel() + " with a max speed of " + fastestJet.getSpeed() + "!");
 	}
 	public void jetWithLongestRange() {
@@ -94,7 +93,6 @@ public class Airfield {
 				j = fleet.get(i);
 			}
 		}
-		System.out.println(j);
 		System.out.println("The jet with the longest range in the fleet is the " + j.getModel() + " with a max range of " + j.getRange() + "!");
 		
 	}
@@ -115,10 +113,10 @@ public class Airfield {
 		}
 	}
 	
-	public void addJet() {
+	public void addPassengerJet() {
 		
 		Scanner kb = new Scanner(System.in);
-		System.out.println("What model jet is it?");
+		System.out.println("What model passenger jet is it?");
 		String model = kb.next();
 		System.out.println("What is the top speed of the jet?");
 		int speed = kb.nextInt();
